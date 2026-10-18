@@ -30,7 +30,7 @@ class Mensal extends Assinatura{
 		}else if(numeroMeses == 1){
 			return this.preco;
 		}else{
-			return (this.preco * 0.05);
+			return (this.preco * numeroMeses - ((this.preco * numeroMeses) * 0.05));
 		}
 	}
 
@@ -38,7 +38,9 @@ class Mensal extends Assinatura{
 	public void exibirInfo(){
 		System.out.println("Plano: " + this.nomePlano);
 		System.out.println("Ativo por: " + this.numeroMeses + " meses");
-		System.out.println("Preço: R$" + calcularPrecoFinal());
+		System.out.println("Preço: R$" + this.preco);
+		System.out.println("Preço Final: R$" + calcularPrecoFinal());
+		System.out.println();
 	}
 }
 
@@ -51,13 +53,15 @@ class Anual extends Assinatura{
 	}
 
 	public double calcularPrecoFinal(){
-		return (this.preco * 0.2);
+		return (this.preco * 12 - ((this.preco * 12) * 0.2));
 	}
 
 	@Override
 	public void exibirInfo(){
 		System.out.println("Plano: " + this.nomePlano);
-		System.out.println("Preço: R$" + calcularPrecoFinal());
+		System.out.println("Preço: R$" + this.preco);
+		System.out.println("Preço Final: R$" + calcularPrecoFinal());
 		System.out.println("Benefícios extras: " + this.beneficiosExtras);
+		System.out.println();
 	}
 }

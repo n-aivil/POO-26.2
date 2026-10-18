@@ -21,7 +21,7 @@ public class SistemaCobranca implements Cobravel{
 		}else if(valor <= 0){
 			throw new IllegalArgumentException("Valor de reembolso inválido.");
 		}else{
-			System.out.println("Reembolso de R$ " + valor + " realizado com sucesso para a assinatura ID: " + idAssinatura + "; cartão ****" + numeroCartao.substring(11) + " .");
+			System.out.println("Reembolso de R$ " + valor + " realizado com sucesso para a assinatura ID: " + idAssinatura + "; cartão ****" + numeroCartao.substring(12) + " .");
 		}
 	}
 }
