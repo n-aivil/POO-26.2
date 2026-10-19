@@ -51,7 +51,7 @@ public abstract class Produto{
 	}
 }
 
-class ProdutoFisico extends Produto{
+class ProdutoFisico extends Produto implements Entregavel{
 	private double pesoKg;
 
 	public ProdutoFisico(String codigo, String nome, double precoBase, int estoque, double pesoKg){
@@ -68,6 +68,19 @@ class ProdutoFisico extends Produto{
 
 	public double calcularPrecoFinal(){
 		return super.getPrecoBase() + (super.getPrecoBase() * 0.10);
+	}
+
+	public double calcularFrete(){
+		double frete = 15 + (getPesoKg() * 2);
+		return frete;
+	}
+
+	public int prazoEntregaDias(String cep){
+		if(cep.charAt(0) == 6){
+			return 7;
+		}else{
+			return 12;
+		}
 	}
 }
 
